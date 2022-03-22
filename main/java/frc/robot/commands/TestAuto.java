@@ -7,7 +7,7 @@ import frc.robot.subsystems.*;
 
 
 public class TestAuto extends SequentialCommandGroup {
-  String TestPath = "pathplanner/generatedJON/TestPath.wpilib.json";
+  String TestPath = "pathplanner/generatedJSON/TestPath.wpilib.json";
 
   public TestAuto(DriveSubsystem m_drive, ArmSubsystem m_arm, IntakeSubsystem m_intake){
 
@@ -22,7 +22,7 @@ public class TestAuto extends SequentialCommandGroup {
     sequence(
       new ArmDown(m_arm),
 
-      new WaitCommand(4.2),
+      new WaitCommand(3.5),
 
       new ArmUp(m_arm))
       ),
