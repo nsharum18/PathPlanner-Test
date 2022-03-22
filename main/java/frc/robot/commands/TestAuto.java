@@ -15,11 +15,11 @@ public class TestAuto extends SequentialCommandGroup {
     new ParallelDeadlineGroup(
       new FollowTrajectory(m_drive, TestPath),
 
-      new ArmDown(m_arm),
-
       new Intake(m_intake),
 
     sequence(
+      new ArmDown(m_arm),
+
       new WaitCommand(4.2),
 
       new ArmUp(m_arm))
