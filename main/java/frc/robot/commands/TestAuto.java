@@ -12,10 +12,12 @@ public class TestAuto extends SequentialCommandGroup {
   public TestAuto(DriveSubsystem m_drive, ArmSubsystem m_arm, IntakeSubsystem m_intake){
 
     addCommands(
+    parallel(
     new ParallelDeadlineGroup(
       new FollowTrajectory(m_drive, TestPath),
 
-      new Intake(m_intake),
+      new Intake(m_intake)
+      ),
 
     sequence(
       new ArmDown(m_arm),
@@ -23,7 +25,7 @@ public class TestAuto extends SequentialCommandGroup {
       new WaitCommand(4.2),
 
       new ArmUp(m_arm))
-    ),
+      ),
     
       new Score(m_intake)
     
